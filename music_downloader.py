@@ -1,0 +1,27 @@
+#yt-dlp
+#pip install yt-dlp
+# pip install imageio-ffmpeg
+import yt_dlp
+
+video_url = "https://youtu.be/ZKmYMnzAtAQ?si=DhYs0-1pStVTPPCD"
+
+# Configuration options (mimics command-line flags)
+ydl_opts = {
+  "format": "bestaudio/best",
+  # 'ffmpeg_location': r'C:\ffmpeg\bin',
+  "postprocessors": [
+    {
+      "key": "FFmpegExtractAudio",
+      "preferredcodec": "mp3",
+     "preferredquality": "192", # You can change to '320' or '0'
+    }
+  ],
+}
+
+# Use a context manager to handle the download
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([video_url])
+
+print("Download complete!")
+# winget install --id Gyan.FFmpeg -e
+#

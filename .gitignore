@@ -2,3 +2,5 @@
 .idea/
 *.txt
 *.mp3
+!requirements.txt
+#pip freeze > requirements.txt

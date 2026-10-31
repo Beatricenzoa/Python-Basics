@@ -21,14 +21,18 @@ students = [{"name":"Emerald Bowen","email":"ullamcorper.nisl@yahoo.org","countr
 #     if country == "New Zealand":
 #      print(f"Name is {name} and citizen of {country} and age is {age} years old")
 
-total = 0
-for student in students:
-    age = student["age"]
-    total = total + age
-
-avg = total/len(students)
-print(avg)
+# total = 0
+# for student in students:
+#     age = student["age"]
+#     total = total + age
+#
+# avg = total/len(students)
+# print(avg)
 
 #lambda expressions
-#TODO sorts the list / filter
+# sort the list / filter
+age_sorted = sorted(students, key = lambda s: s['age'])
+
+for student in age_sorted:
+    print(student)
 
