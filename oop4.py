@@ -16,6 +16,8 @@ class Employee:
         print(self.designation)
         print(self.gender)
         print("**************")
+    def show_designation(self):
+        print(f"{self.name} is a {self.designation}. ")
 class SalariedEmployee(Employee):
     def __init__(self,name:str,id_no:str,department:str,designation:str,gender:str,salary:float,tenure:float):
         super().__init__(name, id_no, department, designation, gender)
@@ -36,3 +38,4 @@ c1 = CasualWorker("Agnes Daniels","34875432","HR","HR Officer","Female",1500)
 s1.print_details()
 c1.print_details()
 print(c1.calculate_wage(10))
+c1.show_designation()
